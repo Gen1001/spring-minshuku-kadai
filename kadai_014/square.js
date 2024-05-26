@@ -1,4 +1,4 @@
 const twice = (number) => {
     console.log(number * number);
 }
-twice(15);
+twice(10);
