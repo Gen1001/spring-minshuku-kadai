@@ -10,23 +10,20 @@ const count = document.getElementById("count");
 const countTyping = document.getElementById("countTyping");
 
 const textLists = [
-    -  "Hello World",
-    -  "This is my App",
-    -  "How are you?"
-    +  "Hello World","This is my App","How are you?",
-    +  "Today is sunny","I love JavaScript!","Good morning",
-    +  "I am Japanese","Let it be","Samurai",
-    +  "Typing Game","Information Technology",
-    +  "I want to be a programmer","What day is today?",
-    +  "I want to build a web app","Nice to meet you",
-    +  "Chrome Firefox Edge Safari","machine learning",
-    +  "Brendan Eich","John Resig","React Vue Angular",
-    +  "Netscape Communications",
-    +  "Thank you very much","Google Apple Facebook Amazon",
-    +  "ECMAScript","console.log","for while if switch",
-    +  "var let const","Windows Mac Linux iOS Android",
-    +  "programming"
-];    
+    'Hello World','This is my App','How are you?',
+    'Today is sunny','I love JavaScript!','Good morning',
+    'I am Japanese','Let it be','Samurai',
+    'Typing Game','Information Technology',
+    'I want to be a programmer','What day is today?',
+    'I want to build a web app','Nice to meet you',
+    'Chrome Firefox Edge Safari','machine learning',
+    'Brendan Eich','John Resig','React Vue Angular',
+    'Netscape Communications','undefined null NaN',
+    'Thank you very much','Google Apple Facebook Amazon',
+    'ECMAScript','console.log','for while if switch',
+    'var let const','Windows Mac Linux iOS Android',
+    'programming'
+  ];   
 
 const createText = () => {
 
@@ -49,6 +46,7 @@ const keyPress = e => {
     }
 
     score++;
+    wrap.classList.remove("mistyped");
     typed += untyped.substring(0, 1);
     untyped = untyped.substring(1);
     typedfield.textContent = typed;
@@ -79,7 +77,7 @@ const rankCheck = score => {
 const gameOver = id => {
     clearInterval(id);
 
-    const resule = confirm(rankCheck(score));
+    const result = confirm(rankCheck(score));
 
     if(result == true) {
         window.location.reload();
